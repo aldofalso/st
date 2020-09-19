@@ -95,42 +95,40 @@ unsigned int tabspaces = 8;
 
 /* Terminal colors (16 first used in escape sequence) */
 static const char *colorname[] = {
-	/* 8 normal colors */
-	"black",
-	"red3",
-	"green3",
-	"yellow3",
-	"blue2",
-	"magenta3",
-	"cyan3",
-	"gray90",
 
-	/* 8 bright colors */
-	"gray50",
-	"red",
-	"green",
-	"yellow",
-	"#5c5cff",
-	"magenta",
-	"cyan",
-	"white",
+  /* 8 normal colors */
+  [0] = "#585c69", /* black   */
+  [1] = "#cab0a1", /* red     */
+  [2] = "#9f8578", /* green   */
+  [3] = "#986c5b", /* yellow  */
+  [4] = "#808178", /* blue    */
+  [5] = "#979892", /* magenta */
+  [6] = "#cab0a1", /* cyan    */
+  [7] = "#707880", /* white   */
 
-	[255] = 0,
+  /* 8 bright colors */
+  [8]  = "#585c69", /* black   */
+  [9]  = "#cab0a1", /* red     */
+  [10] = "#9f8578", /* green   */
+  [11] = "#986c5b", /* yellow  */
+  [12] = "#808178", /* blue    */
+  [13] = "#979892", /* magenta */
+  [14] = "#cab0a1", /* cyan    */
+  [15] = "#707880", /* white   */
 
-	/* more colors can be added after 255 to use with DefaultXX */
-	"#cccccc",
-	"#555555",
+  /* special colors */
+  [256] = "#141414", /* background */
+  [257] = "#c5c8c6", /* foreground */
 };
-
 
 /*
  * Default colors (colorname index)
  * foreground, background, cursor, reverse cursor
  */
-unsigned int defaultfg = 7;
-unsigned int defaultbg = 0;
-static unsigned int defaultcs = 256;
-static unsigned int defaultrcs = 257;
+unsigned int defaultfg = 257;
+unsigned int defaultbg = 256;
+static unsigned int defaultcs = 257;
+static unsigned int defaultrcs = 256;
 
 /*
  * https://invisible-island.net/xterm/ctlseqs/ctlseqs.html#h4-Functions-using-CSI-_-ordered-by-the-final-character-lparen-s-rparen:CSI-Ps-SP-q.1D81
